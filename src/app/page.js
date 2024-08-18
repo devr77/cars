@@ -1,19 +1,17 @@
-import React from "react";
+import HomPage from "./components/HomPage";
 
 function page() {
   return (
-    <div>
-      <div class="mx-auto max-w-md">
-        <h3 class="my-2">Fixed in bottom right</h3>
-        <div class="relative h-40 max-w-md bg-blue-50">
-          <div class="absolute right-0 bottom-0 h-20 w-20 rounded bg-blue-500"></div>
-        </div>
-      </div>
-
-      <div class="mx-auto max-w-md">
-        <h3 class="my-2">Fixed in Center</h3>
-        <div class="flex h-40 max-w-md items-center justify-center bg-blue-50">
-          <div class="h-20 w-20 rounded bg-blue-500"></div>
+    <div className="h-screen">
+      <div
+        class="relative h-4/6 bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url(https://imgd.aeplcdn.com/0x0/ct/static/icons/cloudfront/top-banner2.jpg)",
+        }}
+      >
+        <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 sm:p-6 md:p-8 lg:p-10 p-2 ">
+          <HomPage />
         </div>
       </div>
     </div>
