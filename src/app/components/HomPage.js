@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import {
   Tabs,
   TabsHeader,
@@ -8,41 +9,50 @@ import {
 } from "@material-tailwind/react";
 
 function HomPage() {
+  const [activeTab, setActiveTab] = React.useState("new");
   const data = [
     {
       label: "NEW CARS",
-      value: "html",
-      desc: `It really matters and then like it really doesn't matter.
-          What matters is the people who are sparked by it. And the people 
-          who are like offended by it, it doesn't matter.`,
+      value: "new",
     },
     {
       label: "USED CARS",
-      value: "react",
-      desc: `Because it's about motivating the doers. Because I'm here
-          to follow my dreams and inspire other people to follow their dreams, too.`,
+      value: "used",
     },
   ];
   return (
-    <Tabs value="html" className="max-w-[40rem] ">
+    <Tabs value={activeTab} className="max-w-[40rem] ">
       <TabsHeader
-        className="bg-transparent text-red-50 "
+        className="bg-transparent "
         indicatorProps={{
-          className: "bg-red-500   p-5 ",
+          className: "bg-gray-50   p-5 ",
         }}
       >
         {data.map(({ label, value }) => (
-          <Tab key={value} value={value} className="text-slate-50">
+          <Tab
+            key={value}
+            value={value}
+            onClick={() => setActiveTab(value)}
+            className={activeTab === value ? "text-gray-900" : "text-gray-50"}
+          >
             {label}
           </Tab>
         ))}
       </TabsHeader>
-      <TabsBody className="bg-red-500 ">
-        {data.map(({ value, desc }) => (
-          <TabPanel key={value} value={value}>
-            {desc}
-          </TabPanel>
-        ))}
+      <TabsBody
+        className="bg-gray-50 "
+        animate={{
+          initial: { y: 250 },
+          mount: { y: 0 },
+          unmount: { y: 250 },
+        }}
+      >
+        <TabPanel value="new">
+          <h1>New Cars</h1>
+        </TabPanel>
+        <TabPanel value="used">
+          <h1>Used Cars</h1>
+        </TabPanel>
       </TabsBody>
     </Tabs>
   );
