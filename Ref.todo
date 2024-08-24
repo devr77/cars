@@ -1,7 +1,6 @@
 1. https://www.cartrade.com/
 2. https://freetestapi.com/apis/cars
 3. https://developer.edmunds.com/api-documentation/overview/
-4. https://www.carstore.com/
 
 https://vehicledatabases.com/car-image-api-providers
 
@@ -17,15 +16,20 @@ TailwindCss
 
 0.https://www.material-tailwind.com/ (React Lib)
 1. https://flowbite.com/ ** Gen (Lib)
- 
+2. https://pagedone.io/blocks (G)
+
+
 5.  https://tailblocks.cc/
 6. https://www.mambaui.com/components 150 Tailwind CSS components
 7. https://kutty.netlify.app/components/
 8. https://sailboatui.com/docs/components/
-9. https://www.hyperui.dev/components/
+9. https://www.hyperui.dev/components/   Marketing components
 10. https://tailwindcomponents.com/components/headers
 
 
 prisma init
 prisma generate
+npx prisma db push
 npx prisma studio
+
+https://victoreke.com/blog/sanity-webhooks-and-on-demand-revalidation-in-nextjs

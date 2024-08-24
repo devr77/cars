@@ -5,6 +5,7 @@ import CarCompanyCategory from "./components/CarCompanyCategory";
 import { CarsTabs } from "./components/CarsTabs";
 
 import NewCars from "./components/NewCars";
+import TestiMonial from "./components/TestiMonial";
 
 async function Cars() {
   try {
@@ -23,13 +24,13 @@ export default async function page() {
   return (
     <>
       <div className="relative h-[500px] bg-cover bg-center bg-[url('https://imgd.aeplcdn.com/0x0/ct/static/icons/cloudfront/top-banner2.jpg')]">
-        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 p-2">
+        <div className="absolute w-full md:w-3/4 lg:w-1/2 mx-auto bottom-2  p-2  left-1/2 transform -translate-x-1/2 ">
           <HomPage />
         </div>
       </div>
 
-      <div className="relative h-4/5 mt-36 bg-gray-200">
-        <div className=" mx-auto   p-4 w-10/12">
+      <div className="h-4/5 mt-36 bg-gray-200">
+        <div className=" mx-auto p-4   md:w-10/12">
           <div className="flex justify-between mb-5">
             <h2 className="font-bold text-red-500 text-base sm:text-lg md:text-xl lg:text-2xl">
               POPULAR NEW CARS
@@ -43,7 +44,7 @@ export default async function page() {
         </div>
       </div>
       <div className="mt-36 ">
-        <div className=" mx-auto   p-4 w-10/12">
+        <div className=" mx-auto   p-4 md:w-10/12">
           <div className="flex justify-between mb-5">
             <h2 className="font-bold text-red-500 text-base sm:text-lg md:text-xl lg:text-2xl">
               POPULAR USED CARS
@@ -58,7 +59,7 @@ export default async function page() {
       </div>
 
       <div className=" mt-18 ">
-        <div className=" mx-auto   p-4 w-10/12">
+        <div className=" mx-auto   p-4 md:w-10/12">
           <div className="flex justify-between mb-5">
             <h2 className="font-bold text-red-500 text-base sm:text-lg md:text-xl lg:text-2xl">
               SEARCH NEW CARS BY BRAND
@@ -79,6 +80,8 @@ export default async function page() {
           <NewCars />
         </div>
       </div>
+
+      <TestiMonial />
     </>
   );
 }

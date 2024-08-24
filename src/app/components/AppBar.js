@@ -10,10 +10,7 @@ function AppBar() {
           <div className="hidden md:block">
             <nav aria-label="Global">
               <ul className="flex items-center gap-6 text-sm font-bold">
-                <div
-                  id="bouton"
-                  class="relative group/bouton hover:text-red-600"
-                >
+                <div id="bouton" class="relative group/bouton">
                   <li className="flex">
                     <a
                       className="text-black-500 transition hover:text-red-600"
@@ -41,6 +38,16 @@ function AppBar() {
                       className="absolute  z-10 mt-2 w-56 rounded-md border border-gray-100 bg-white shadow-lg"
                       role="menu"
                     >
+                      <div className="p-2">
+                        <a
+                          href="#"
+                          className="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+                          role="menuitem"
+                        >
+                          View on Storefront
+                        </a>
+                      </div>
+
                       <div className="p-2">
                         <a
                           href="#"

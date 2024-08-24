@@ -6,6 +6,9 @@ import {
   TabsBody,
   Tab,
   TabPanel,
+  Select,
+  Option,
+  Button,
 } from "@material-tailwind/react";
 
 function HomPage() {
@@ -25,7 +28,7 @@ function HomPage() {
       <TabsHeader
         className="bg-transparent "
         indicatorProps={{
-          className: "bg-gray-50   p-5 ",
+          className: "bg-gray-50  ",
         }}
       >
         {data.map(({ label, value }) => (
@@ -48,10 +51,53 @@ function HomPage() {
         }}
       >
         <TabPanel value="new">
-          <h1>New Cars</h1>
+          <div className="flex justify-items-center justify-between gap-4 ">
+            <div class="block w-full">
+              <select
+                id="countries"
+                class="h-12 border border-gray-300 text-gray-900 text-base rounded-lg block w-full py-2.5 px-4 focus:outline-none"
+              >
+                <option selected> Select City</option>
+                <option value="US">New Delhi</option>
+                <option value="CA">Mumbai</option>
+                <option value="FR">Chennai</option>
+                <option value="DE">Banglore</option>
+              </select>
+            </div>
+            <div class="block w-full">
+              <Button size="lg" color="red" className="w-full">
+                ALL USED CARS
+              </Button>
+            </div>
+          </div>
         </TabPanel>
         <TabPanel value="used">
-          <h1>Used Cars</h1>
+          <div className="flex justify-items-center justify-between gap-4 ">
+            <div class="block w-full">
+              <select
+                id="countries"
+                class="h-12 border border-gray-300 text-gray-900 text-base rounded-lg block w-full py-2.5 px-4 focus:outline-none"
+              >
+                <option selected> Select Brand</option>
+                <option value="US">New Delhi</option>
+                <option value="CA">Mumbai</option>
+                <option value="FR">Chennai</option>
+                <option value="DE">Banglore</option>
+              </select>
+            </div>
+            <div class="block w-full">
+              <select
+                id="countries"
+                class="h-12 border border-gray-300 text-gray-900 text-base rounded-lg block w-full py-2.5 px-4 focus:outline-none"
+              >
+                <option selected> Select Model</option>
+                <option value="US">New Delhi</option>
+                <option value="CA">Mumbai</option>
+                <option value="FR">Chennai</option>
+                <option value="DE">Banglore</option>
+              </select>
+            </div>
+          </div>
         </TabPanel>
       </TabsBody>
     </Tabs>

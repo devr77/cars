@@ -55,7 +55,7 @@ function NewCars() {
           }}
         >
           <TabPanel value="price">
-            <div className="flex gap-2">
+            <div className="flex  flex-wrap  gap-2">
               <Chip variant="outlined" value="0-3 LAKH" size="lg" />
               <Chip variant="outlined" value="3-6 LAKH" />
               <Chip variant="outlined" value="6-10 LAKH" />
@@ -66,7 +66,7 @@ function NewCars() {
             </div>
           </TabPanel>
           <TabPanel value="fuel">
-            <div className="flex gap-2">
+            <div className="flex  flex-wrap gap-2">
               <Chip variant="outlined" value="PETROL" size="lg" />
               <Chip variant="outlined" value="DIESEL" />
               <Chip variant="outlined" value="CNG" />

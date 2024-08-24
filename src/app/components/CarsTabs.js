@@ -182,7 +182,7 @@ export function CarsTabs({ TotalCars }) {
           </TabPanel>
         </TabsBody>
       </Tabs>
-      <Typography variant="h5" className="text-center" color="red">
+      <Typography variant="h5" className="text-center mt-3" color="red">
         All Popular Cars in India
       </Typography>
     </>
