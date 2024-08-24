@@ -24,3 +24,8 @@ TailwindCss
 8. https://sailboatui.com/docs/components/
 9. https://www.hyperui.dev/components/
 10. https://tailwindcomponents.com/components/headers
+
+
+prisma init
+prisma generate
+npx prisma studio
