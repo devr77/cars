@@ -66,7 +66,7 @@ function HomPage() {
             </div>
             <div class="block w-full">
               <Button size="lg" color="red" className="w-full">
-                ALL USED CARS
+                New CARS
               </Button>
             </div>
           </div>

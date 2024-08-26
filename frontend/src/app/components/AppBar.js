@@ -1,12 +1,29 @@
+"use client";
+
+import React from "react";
+import {
+  Drawer,
+  Button,
+  Typography,
+  IconButton,
+} from "@material-tailwind/react";
+import Image from "next/image";
+
 function AppBar() {
+  const [open, setOpen] = React.useState(false);
+
+  const openDrawer = () => setOpen(true);
+  const closeDrawer = () => setOpen(false);
   return (
     <header className="bg-white">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <a className="block text-red-600 text-2xl" href="/">
-            CarStore
-          </a>
-
+          <Image
+            src="/assets/logo.jpg"
+            alt="carStore-logo"
+            width="84"
+            height="84"
+          />
           <div className="hidden md:block">
             <nav aria-label="Global">
               <ul className="flex items-center gap-6 text-sm font-bold">
@@ -125,7 +142,10 @@ function AppBar() {
             </div>
 
             <div className="block md:hidden">
-              <button className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
+              <button
+                className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
+                onClick={openDrawer}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"
@@ -145,6 +165,34 @@ function AppBar() {
           </div>
         </div>
       </div>
+      <Drawer
+        open={open}
+        onClose={closeDrawer}
+        className="p-4"
+        placement="right"
+      >
+        <div className="mb-6 flex items-center justify-between">
+          <Typography variant="h5" color="red">
+            CarStore
+          </Typography>
+          <IconButton variant="text" color="blue-gray" onClick={closeDrawer}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="h-5 w-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </IconButton>
+        </div>
+      </Drawer>
     </header>
   );
 }
