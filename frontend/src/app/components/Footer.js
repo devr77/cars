@@ -1,6 +1,34 @@
-import React from "react";
+"use client";
+import { client } from "@/utils/sanityClient";
+import Image from "next/image";
+import React, { useState } from "react";
 
 function Footer() {
+  const [MobileNo, setMobileNo] = useState("");
+
+  const newContact = {
+    _type: "contactUs", // Ensure this matches the schema type you created in Sanity
+    name: `New  Enquiry - ${new Date()}`,
+    mobileNo: MobileNo,
+  };
+
+  function submit() {
+    client
+      .create(newContact)
+      .then((response) => {
+        if (response?._createdAt) {
+          alert("Thank You . We Will Call You Back.");
+          console.log("New contact was created:", response);
+        }
+      })
+      .catch((error) => {
+        console.error("Failed to create new contact:", error.message);
+      });
+  }
+
+  function getMobileNo(e) {
+    setMobileNo(e.target.value);
+  }
   return (
     <footer className="bg-gray-100 text-gray-600 body-font mt-6">
       <div className="container mx-auto px-5 py-24">
@@ -65,26 +93,24 @@ function Footer() {
           </div>
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
             <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-              Need Help
+              Need Help ?
             </h2>
             <div className="flex xl:flex-nowrap md:flex-nowrap lg:flex-wrap flex-wrap justify-center items-end md:justify-start">
               <div className="relative w-40 sm:w-auto xl:mr-4 lg:mr-0 sm:mr-4 mr-2">
-                <label
-                  htmlFor="footer-field"
-                  className="leading-7 text-sm text-gray-600"
-                >
-                  Enter Your Mobile No
-                </label>
                 <input
                   type="text"
-                  id="footer-field"
-                  name="footer-field"
-                  className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  placeholder="Enter Your Mobile No"
+                  className="w-full mb-1 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  onChange={(e) => getMobileNo(e)}
+                  maxlength="10"
                 />
+                <button
+                  className="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded"
+                  onClick={submit}
+                >
+                  Call me
+                </button>
               </div>
-              <button className="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
-                Call me
-              </button>
             </div>
           </div>
         </div>
@@ -92,18 +118,15 @@ function Footer() {
       <div className="bg-gray-200">
         <div className="container mx-auto px-5 py-6 flex items-center justify-between sm:flex-row flex-col">
           <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-              viewBox="0 0 24 24"
-            >
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-            </svg>
+            <Image
+              src="/assets/logo.jpg"
+              alt="carStore-logo"
+              width="84"
+              height="84"
+              style={{
+                mixBlendMode: "darken",
+              }}
+            />
             <span className="ml-3 text-xl">CarStore</span>
           </a>
           <p className="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">

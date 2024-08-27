@@ -6,6 +6,9 @@ import { CarsTabs } from "./components/CarsTabs";
 
 import NewCars from "./components/NewCars";
 import TestiMonial from "./components/TestiMonial";
+import { client } from "@/utils/sanityClient";
+
+import imageUrlBuilder from "@sanity/image-url";
 
 async function Cars() {
   try {
@@ -18,9 +21,56 @@ async function Cars() {
     console.log(err);
   }
 }
-
+const builder = imageUrlBuilder(client);
+function urlFor(source) {
+  return builder?.image(source);
+}
 export default async function page() {
   const TotalCars = await Cars();
+
+  const post = await client.fetch(`*[_type == "car"]
+    {
+      name,
+      slug,
+      brand []  -> {
+      _id,
+      name
+      },
+      fuel []  -> {
+      _id,
+      name
+      },
+      city []  -> {
+      _id,
+      name
+      },
+      body []  -> {
+      _id,
+      name
+      },
+      transmission []  -> {
+      _id,
+      name
+      },
+      feature,
+      image,
+      description,
+      price,
+      mileage,
+      color,
+      year,
+      color,
+      seating,
+      size,
+      engine,
+      ratings,
+      variants []  -> {
+      _id,
+      name
+      },
+      publishedAt
+    }`);
+  console.log("Images", urlFor(post[0]?.image[0]?.asset?._ref).url());
   return (
     <>
       <div className="relative h-[500px] bg-cover bg-center bg-[url('https://imgd.aeplcdn.com/0x0/ct/static/icons/cloudfront/top-banner2.jpg')]">

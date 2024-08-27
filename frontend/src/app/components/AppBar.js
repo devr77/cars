@@ -21,8 +21,8 @@ function AppBar() {
           <Image
             src="/assets/logo.jpg"
             alt="carStore-logo"
-            width="84"
-            height="84"
+            width="100"
+            height="100"
           />
           <div className="hidden md:block">
             <nav aria-label="Global">
