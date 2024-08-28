@@ -1,6 +1,32 @@
 "use client";
 
+import { client } from "@/utils/sanityClient";
+import React, { useState } from "react";
+
 function page() {
+  const [name, setName] = useState("");
+  const [MobileNo, setMobileNo] = useState("");
+  const [message, setMessage] = useState("");
+
+  const newContact = {
+    _type: "contactUs",
+    name: `${name} - ${new Date()} `,
+    mobileNo: MobileNo,
+    description: message,
+  };
+
+  function submit() {
+    client
+      .create(newContact)
+      .then((response) => {
+        if (response?._createdAt) {
+          alert("Thank You . We Will Call You Back.");
+        }
+      })
+      .catch((error) => {
+        console.error("Failed to create new contact:", error.message);
+      });
+  }
   return (
     <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
       <section class="text-gray-600 body-font relative">
@@ -22,21 +48,19 @@ function page() {
                   </label>
                   <input
                     type="text"
-                    id="name"
-                    name="name"
                     class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    onChange={(e) => setName(e.target.value)}
                   />
                 </div>
               </div>
               <div class="p-2 w-1/2">
                 <div class="relative">
                   <label for="email" class="leading-7 text-sm text-gray-600">
-                    Email
+                    Mobile No
                   </label>
                   <input
-                    type="email"
-                    id="email"
-                    name="email"
+                    type="text"
+                    onChange={(e) => setMobileNo(e.target.value)}
                     class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   />
                 </div>
@@ -47,6 +71,7 @@ function page() {
                     Message
                   </label>
                   <textarea
+                    onChange={(e) => setMessage(e.target.value)}
                     id="message"
                     name="message"
                     class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
@@ -54,7 +79,10 @@ function page() {
                 </div>
               </div>
               <div class="p-2 w-full">
-                <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                <button
+                  class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                  onClick={submit}
+                >
                   Button
                 </button>
               </div>
