@@ -54,3 +54,4 @@ npx prisma db push
 npx prisma studio
 
 https://victoreke.com/blog/sanity-webhooks-and-on-demand-revalidation-in-nextjs
+https://www.sanity.io/blog/sanity-nextjs-enhancements
