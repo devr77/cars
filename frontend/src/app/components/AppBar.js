@@ -10,14 +10,26 @@ import {
   ListItem,
   ListItemPrefix,
   ListItemSuffix,
+  Button,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
 } from "@material-tailwind/react";
 import Image from "next/image";
+
+import { cities } from "@/utils/cities";
 
 function AppBar() {
   const [open, setOpen] = React.useState(false);
 
   const openDrawer = () => setOpen(true);
   const closeDrawer = () => setOpen(false);
+
+  const [openDialog, setOpenDialog] = React.useState(false);
+
+  const handleOpenDialog = () => setOpenDialog(!openDialog);
+
   return (
     <header className="bg-white">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
@@ -127,23 +139,57 @@ function AppBar() {
           </div>
 
           <div className="flex items-center gap-4">
-            <div className="sm:flex sm:gap-4">
-              <a
-                className="rounded-md bg-red-600 px-5 py-2.5 text-sm font-medium text-white shadow"
-                href="#"
-              >
-                Login
-              </a>
+            <div className="sm:flex sm:gap-4 px-5 py-2.5">
+              <IconButton variant="text" onClick={handleOpenDialog}>
+                <svg
+                  viewBox="0 0 500 1000"
+                  fill="currentColor"
+                  height="2em"
+                  width="2em"
+                >
+                  <path d="M250 100c69.333 0 128.333 24.333 177 73s73 107.667 73 177c0 70.667-20.667 151.667-62 243s-83.333 165.667-126 223l-62 84c-6.667-8-15.667-19.667-27-35-11.333-15.333-31.333-45-60-89s-54-87.333-76-130-42-91.667-60-147S0 394 0 350c0-69.333 24.333-128.333 73-177s107.667-73 177-73m0 388c37.333 0 69.333-13.333 96-40s40-58.667 40-96-13.333-69-40-95-58.667-39-96-39-69 13-95 39-39 57.667-39 95 13 69.333 39 96 57.667 40 95 40" />
+                </svg>
+              </IconButton>
 
               <div className="hidden sm:flex">
                 <a
-                  className="rounded-md bg--100 px-5 py-2.5 text-sm font-medium text-teal-600"
+                  className="rounded-md bg-red-600 px-5 py-2.5 text-sm font-medium text-white shadow"
                   href="#"
                 >
-                  Register
+                  Login
                 </a>
               </div>
             </div>
+
+            <Dialog size="md" open={openDialog} handler={handleOpenDialog}>
+              <DialogHeader>Chose Your Location</DialogHeader>
+              <DialogBody>
+                <select
+                  id="model"
+                  class="h-12 border border-gray-300 text-gray-900 text-base rounded-lg block w-full py-2.5 px-4 focus:outline-none"
+                  onChange={(e) => alert(e.target.value)}
+                >
+                  <option selected> Select City</option>
+                  {cities?.map((city) => {
+                    return (
+                      <>
+                        <option value={city?.slug}>{city?.label}</option>
+                      </>
+                    );
+                  })}
+                </select>
+              </DialogBody>
+              <DialogFooter>
+                <Button
+                  variant="outlined"
+                  color="red"
+                  onClick={handleOpenDialog}
+                  className="mr-1"
+                >
+                  <span>Cancel</span>
+                </Button>
+              </DialogFooter>
+            </Dialog>
 
             <div className="block md:hidden">
               <button
