@@ -5,5 +5,19 @@ import company from './company'
 import contactus from './contactus'
 import fuel from './fuel'
 import transmission from './transmission'
+import review from './review'
+import enquiry from './enquiry'
+import loan from './loan'
 
-export const schemaTypes = [car, city, company, fuel, transmission, bodyType, contactus]
+export const schemaTypes = [
+  car,
+  city,
+  company,
+  fuel,
+  transmission,
+  bodyType,
+  review,
+  enquiry,
+  loan,
+  contactus,
+]

@@ -61,7 +61,7 @@ async function page({ params, searchParams }) {
   }
 
   if (type) {
-    filterConditions += ` && type == ${slugToOriginal(type)}`;
+    filterConditions += ` && type == ${type}`;
   }
   if (price) {
     filterConditions += ` && price <= ${price}`;

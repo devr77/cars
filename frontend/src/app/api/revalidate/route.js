@@ -6,6 +6,8 @@ export async function POST(request) {
   try {
     const text = await request.text();
     revalidatePath("/");
+    revalidatePath("/cars");
+    revalidatePath(`/cars/${text?.slug}`);
     console.log(text);
   } catch (error) {
     return new Response(`Webhook error: ${error.message}`, {

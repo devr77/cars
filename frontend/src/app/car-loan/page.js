@@ -1,7 +1,11 @@
-import React from "react";
+import CarLoan from "./CarLoan";
 
-function page() {
-  return <div>page</div>;
+async function page() {
+  return (
+    <div>
+      <CarLoan />
+    </div>
+  );
 }
 
 export default page;

@@ -96,10 +96,14 @@ export default defineType({
       title: 'Description',
       type: 'string',
     }),
-
     defineField({
       name: 'price',
-      title: 'Price of Car',
+      title: 'Actual Price Ex.Rs600000',
+      type: 'string',
+    }),
+    defineField({
+      name: 'priceRange',
+      title: 'Price Range Ex. 6Lakh-10Lakh',
       type: 'string',
     }),
     defineField({

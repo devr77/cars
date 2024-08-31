@@ -19,8 +19,10 @@ import {
 import Image from "next/image";
 
 import { cities } from "@/utils/cities";
+import { useRouter } from "next/navigation";
 
 function AppBar() {
+  const router = useRouter();
   const [open, setOpen] = React.useState(false);
 
   const openDrawer = () => setOpen(true);
@@ -30,6 +32,10 @@ function AppBar() {
 
   const handleOpenDialog = () => setOpenDialog(!openDialog);
 
+  function navigate(param) {
+    setOpen(false);
+    router.push(param);
+  }
   return (
     <header className="bg-white">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
@@ -245,7 +251,7 @@ function AppBar() {
           </IconButton>
         </div>
         <List>
-          <ListItem>
+          <ListItem onClick={() => navigate("/cars?type=true")}>
             <ListItemPrefix>
               <svg
                 viewBox="0 0 1024 1024"
@@ -266,7 +272,7 @@ function AppBar() {
               />
             </ListItemSuffix>
           </ListItem>
-          <ListItem>
+          <ListItem onClick={() => navigate("/cars?type=false")}>
             <ListItemPrefix>
               <svg
                 viewBox="0 0 24 24"
@@ -279,7 +285,7 @@ function AppBar() {
             </ListItemPrefix>
             Used Cars
           </ListItem>
-          <ListItem>
+          <ListItem onClick={() => navigate("/car-loan")}>
             <ListItemPrefix>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -309,7 +315,7 @@ function AppBar() {
             </ListItemPrefix>
             Sell Car
           </ListItem>
-          <ListItem>
+          <ListItem onClick={() => navigate("/contact-us")}>
             <ListItemPrefix>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
