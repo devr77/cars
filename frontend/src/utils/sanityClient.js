@@ -1,10 +1,10 @@
 import { createClient } from "@sanity/client";
 
 export const client = createClient({
-  projectId: "qgnl6z2d",
+  projectId: "pcxwdqmb",
   dataset: "production",
   apiVersion: "2024-04-16",
   useCdn: false,
   token:
-    "skcDQQlXidQSCPe9wPtDorR9wP2Qz3AcMq2W0uHIz2eLnCmFQOvNHz0AwJbWPbF4OfxHO54O4PJ0CEcSxXQdaMuYPHynXCg46igAy2MGTGsRVLmlcywEhzwimwNQN76urDrr4bGpBxn2jtNQb1E6MWkAOyeZXAYV3m02N78QFqm51y5TdPC2",
+    "skF7zkOmqJVCuXIvgLHzm36Y1uzNfx3FHWJKSpCYRnXq3t5VIH1PkUyGjxqke8D6NMZajoxwlNPVK35ac16nLCwtFV8DkJufxRAHOk6cYtxMmvyLgR94tjaJAtff3Ls4HzBySFtgRIQ2RLpbg4thM3B1sB9kOisQRmv56W8MxLjsbHO7oOsE",
 });

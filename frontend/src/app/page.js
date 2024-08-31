@@ -28,9 +28,7 @@ function urlFor(source) {
 export default async function page() {
   const TotalCars = await Cars();
 
-  const post = await client.fetch(
-    `*[_type == "car"]
-    {
+  const post = await client.fetch(`*[_type == "car"]{
       name,
       slug,
       brand []  -> {
@@ -69,13 +67,12 @@ export default async function page() {
       _id,
       name
       },
-      publishedAt
-    }`
-  );
+      publishedAt}`);
 
-  console.log("Images", urlFor(post[0]?.image[0]?.asset?._ref).url());
+  console.log("Images", urlFor(post[0]?.image[0]?.asset?._ref)?.url());
   console.log("Post Lengths..", post?.length);
   console.log("Post", post);
+  console.log("Post Brand", post[0]?.body);
   return (
     <>
       <div className="relative h-[500px] bg-cover bg-center bg-[url('https://imgd.aeplcdn.com/0x0/ct/static/icons/cloudfront/top-banner2.jpg')]">

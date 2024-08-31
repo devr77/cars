@@ -154,7 +154,7 @@ function AppBar() {
               <div className="hidden sm:flex">
                 <a
                   className="rounded-md bg-red-600 px-5 py-2.5 text-sm font-medium text-white shadow"
-                  href="#"
+                  href="https://carsstore24x7.sanity.studio/structure"
                 >
                   Login
                 </a>
@@ -223,7 +223,7 @@ function AppBar() {
       >
         <div className="mb-2 flex items-center justify-between p-4">
           <Typography variant="h5" color="red">
-            CarsStore
+            CarsStore24x7
           </Typography>
           <IconButton variant="text" color="blue-gray" onClick={closeDrawer}>
             <svg
