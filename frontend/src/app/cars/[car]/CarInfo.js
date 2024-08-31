@@ -8,16 +8,14 @@ import {
   Tab,
   TabPanel,
 } from "@material-tailwind/react";
+import { imageUrl } from "@/utils/imageUrl";
 
 const data = [
   {
     label: "INFORMATION",
     value: "info",
   },
-  {
-    label: "VARIANTS",
-    value: "variants",
-  },
+
   {
     label: "IMAGES",
     value: "images",
@@ -34,19 +32,17 @@ const data = [
     label: "OFFER",
     value: "offer",
   },
-
   {
-    label: "MORE",
-    value: "more",
+    label: "VARIANTS",
+    value: "variants",
   },
 ];
 
-function page() {
+function CarInfo({ car }) {
   const [activeTab, setActiveTab] = React.useState("info");
+  console.log(car?.brand[0]?.name);
   return (
     <div className="mx-auto p-4 md:w-10/12">
-      <h2>Home / Citroen Cars / Basalt</h2>
-
       <Tabs value={activeTab} className=" mt-4">
         <TabsHeader
           className="rounded-none border-b border-red-300 bg-transparent p-0 overflow-x-auto whitespace-nowrap"
@@ -84,16 +80,16 @@ function page() {
               <div class="container px-5 py-24 mx-auto">
                 <div class="lg:w-4/5 mx-auto flex flex-wrap">
                   <img
-                    alt="ecommerce"
-                    class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
-                    src="https://dummyimage.com/400x400"
+                    alt="car-image"
+                    class="lg:w-3/4 w-full lg:h-auto h-64 object-cover object-center rounded"
+                    src={imageUrl(car?.image[0]?.asset?._ref)}
                   />
                   <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                     <h2 class="text-sm title-font text-gray-500 tracking-widest">
-                      BRAND NAME
+                      {car?.brand[0]?.name}
                     </h2>
                     <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">
-                      The Catcher in the Rye
+                      {car?.brand[0]?.name} {car?.name}
                     </h1>
                     <div class="flex mb-4">
                       <span class="flex items-center">
@@ -193,14 +189,7 @@ function page() {
                         </a>
                       </span>
                     </div>
-                    <p class="leading-relaxed">
-                      Fam locavore kickstarter distillery. Mixtape chillwave
-                      tumeric sriracha taximy chia microdosing tilde DIY. XOXO
-                      fam indxgo juiceramps cornhole raw denim forage brooklyn.
-                      Everyday carry +1 seitan poutine tumeric. Gastropub blue
-                      bottle austin listicle pour-over, neutra jean shorts
-                      keytar banjo tattooed umami cardigan.
-                    </p>
+                    <p class="leading-relaxed">{car?.description}</p>
                     <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
                       <div class="flex">
                         <span class="mr-3">Color</span>
@@ -235,7 +224,7 @@ function page() {
                     </div>
                     <div class="flex">
                       <span class="title-font font-medium text-2xl text-gray-900">
-                        $58.00
+                        Rs. {car?.price}
                       </span>
                       <button class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
                         Button
@@ -775,4 +764,4 @@ function page() {
   );
 }
 
-export default page;
+export default CarInfo;

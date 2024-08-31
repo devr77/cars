@@ -131,10 +131,10 @@ function Footer() {
                 mixBlendMode: "darken",
               }}
             />
-            <span className="ml-3 text-xl">CarsStore24x7</span>
+            <span className="ml-3 text-xl">carsStore7x24</span>
           </a>
           <p className="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">
-            © 2024 CarsStore24x7
+            © 2024 carsStore7x24
             {/* <a
               href="https://twitter.com/knyttneve"
               rel="noopener noreferrer"

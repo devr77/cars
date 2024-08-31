@@ -14,6 +14,8 @@ import {
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { imageUrl } from "@/utils/imageUrl";
+import { useRouter } from "next/navigation";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -90,6 +92,7 @@ const data = [
 ];
 
 export function CarsTabs({ TotalCars }) {
+  const router = useRouter();
   const [activeTab, setActiveTab] = React.useState("popular");
 
   return (
@@ -117,18 +120,23 @@ export function CarsTabs({ TotalCars }) {
           <TabPanel value="popular">
             <Slider {...settings}>
               {TotalCars?.map((car, index) => (
-                <Card key={index} className=" mt-10 w-20">
+                <Card
+                  key={index}
+                  className=" mt-10 w-20"
+                  onClick={() => router.push(`/cars/${car?.slug?.current}`)}
+                >
                   <CardHeader color="blue-gray" className=" h-30">
-                    <img src={car?.image} alt="card-image" />
+                    <img
+                      src={imageUrl(car?.image[0]?.asset?._ref)?.url()}
+                      alt="card-image"
+                    />
                   </CardHeader>
                   <CardBody>
-                    <Typography>
-                      {car?.make}
-                      {car?.model}
-                    </Typography>
                     <Typography variant="h5" color="blue-gray" className="mb-2">
-                      ${car?.price}
+                      {car?.name}
                     </Typography>
+                    <Typography>{car?.brand[0]?.name}</Typography>
+                    <Typography>Rs. {car?.price}</Typography>
                   </CardBody>
                 </Card>
               ))}
@@ -137,21 +145,19 @@ export function CarsTabs({ TotalCars }) {
           <TabPanel value="upcoming">
             <Slider {...settings}>
               {TotalCars?.map((car, index) => (
-                <Card className="mt-10 w-20">
-                  <CardHeader color="blue-gray" className="relative h-40">
+                <Card key={index} className=" mt-10 w-20">
+                  <CardHeader color="blue-gray" className=" h-30">
                     <img
-                      src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+                      src={imageUrl(car?.image[0]?.asset?._ref)?.url()}
                       alt="card-image"
                     />
                   </CardHeader>
                   <CardBody>
-                    <Typography>
-                      {car?.make}
-                      {car?.model}
-                    </Typography>
                     <Typography variant="h5" color="blue-gray" className="mb-2">
-                      ${car?.price}
+                      {car?.name}
                     </Typography>
+                    <Typography>{car?.brand[0]?.name}</Typography>
+                    <Typography>Rs. {car?.price}</Typography>
                   </CardBody>
                 </Card>
               ))}
@@ -160,21 +166,19 @@ export function CarsTabs({ TotalCars }) {
           <TabPanel value="latest">
             <Slider {...settings}>
               {TotalCars?.map((car, index) => (
-                <Card className="mt-10 w-20">
-                  <CardHeader color="blue-gray" className="relative h-40">
+                <Card key={index} className=" mt-10 w-20">
+                  <CardHeader color="blue-gray" className=" h-30">
                     <img
-                      src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+                      src={imageUrl(car?.image[0]?.asset?._ref)?.url()}
                       alt="card-image"
                     />
                   </CardHeader>
                   <CardBody>
-                    <Typography>
-                      {car?.make}
-                      {car?.model}
-                    </Typography>
                     <Typography variant="h5" color="blue-gray" className="mb-2">
-                      ${car?.price}
+                      {car?.name}
                     </Typography>
+                    <Typography>{car?.brand[0]?.name}</Typography>
+                    <Typography>Rs. {car?.price}</Typography>
                   </CardBody>
                 </Card>
               ))}

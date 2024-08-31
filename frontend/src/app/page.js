@@ -7,8 +7,7 @@ import { CarsTabs } from "./components/CarsTabs";
 import NewCars from "./components/NewCars";
 import TestiMonial from "./components/TestiMonial";
 import { client } from "@/utils/sanityClient";
-
-import imageUrlBuilder from "@sanity/image-url";
+import { imageUrl } from "@/utils/imageUrl";
 
 async function Cars() {
   try {
@@ -21,14 +20,11 @@ async function Cars() {
     console.log(err);
   }
 }
-const builder = imageUrlBuilder(client);
-function urlFor(source) {
-  return builder?.image(source);
-}
+
 export default async function page() {
   const TotalCars = await Cars();
 
-  const post = await client.fetch(`*[_type == "car"]{
+  const Post = await client.fetch(`*[_type == "car"]{
       name,
       slug,
       brand []  -> {
@@ -69,10 +65,10 @@ export default async function page() {
       },
       publishedAt}`);
 
-  console.log("Images", urlFor(post[0]?.image[0]?.asset?._ref)?.url());
-  console.log("Post Lengths..", post?.length);
-  console.log("Post", post);
-  console.log("Post Brand", post[0]?.body);
+  // console.log("Images Fun", imageUrl(Post[0]?.image[0]?.asset?._ref)?.url());
+  // console.log("Post Lengths..", Post?.length);
+  // console.log("Post", Post);
+  // console.log("Post Brand", Post[0]?.brand[0]?.name);
   return (
     <>
       <div className="relative h-[500px] bg-cover bg-center bg-[url('https://imgd.aeplcdn.com/0x0/ct/static/icons/cloudfront/top-banner2.jpg')]">
@@ -92,7 +88,7 @@ export default async function page() {
             </div>
           </div>
 
-          <CarsTabs TotalCars={TotalCars} />
+          <CarsTabs TotalCars={Post} />
         </div>
       </div>
       <div className="mt-36 ">

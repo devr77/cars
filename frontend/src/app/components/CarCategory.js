@@ -116,7 +116,11 @@ function CarCategory({ TotalCars }) {
           <TabPanel value="price">
             <Slider {...settings}>
               {TotalCars?.map((car, index) => (
-                <Card key={index} className=" mt-10 w-20">
+                <Card
+                  key={index}
+                  className=" mt-10 w-20"
+                  onClick={() => alert(car?.slug)}
+                >
                   <CardHeader color="blue-gray" className=" h-30">
                     <img src={car?.image} alt="card-image" />
                   </CardHeader>
