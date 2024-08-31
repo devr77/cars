@@ -59,16 +59,15 @@ export default async function page() {
       size,
       engine,
       ratings,
+      type,
       variants []  -> {
       _id,
       name
       },
       publishedAt}`);
 
-  // console.log("Images Fun", imageUrl(Post[0]?.image[0]?.asset?._ref)?.url());
-  // console.log("Post Lengths..", Post?.length);
   // console.log("Post", Post);
-  // console.log("Post Brand", Post[0]?.brand[0]?.name);
+
   return (
     <>
       <div className="relative h-[500px] bg-cover bg-center bg-[url('https://imgd.aeplcdn.com/0x0/ct/static/icons/cloudfront/top-banner2.jpg')]">

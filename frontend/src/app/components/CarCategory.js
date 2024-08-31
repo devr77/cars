@@ -14,6 +14,7 @@ import {
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { cities } from "@/utils/cities";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -76,6 +77,10 @@ var settings = {
 
 const data = [
   {
+    label: "By City",
+    value: "city",
+  },
+  {
     label: "By Price",
     value: "price",
   },
@@ -83,14 +88,10 @@ const data = [
     label: "By Model",
     value: "model",
   },
-  {
-    label: "By City",
-    value: "city",
-  },
 ];
 
 function CarCategory({ TotalCars }) {
-  const [activeTab, setActiveTab] = React.useState("price");
+  const [activeTab, setActiveTab] = React.useState("city");
   return (
     <div>
       <Tabs value={activeTab}>
@@ -162,23 +163,16 @@ function CarCategory({ TotalCars }) {
           </TabPanel>
           <TabPanel value="city">
             <Slider {...settings}>
-              {TotalCars?.map((car, index) => (
+              {cities?.map((city) => (
                 <Card className="mt-10 w-20">
-                  <CardHeader color="blue-gray" className="relative h-40">
-                    <img
-                      src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
-                      alt="card-image"
-                    />
+                  <CardHeader className="relative h-40">
+                    <Typography
+                      variant="h2"
+                      className="mb-2 text-center flex items-center justify-center"
+                    >
+                      {city?.label}
+                    </Typography>
                   </CardHeader>
-                  <CardBody>
-                    <Typography>
-                      {car?.make}
-                      {car?.model}
-                    </Typography>
-                    <Typography variant="h5" color="blue-gray" className="mb-2">
-                      ${car?.price}
-                    </Typography>
-                  </CardBody>
                 </Card>
               ))}
             </Slider>

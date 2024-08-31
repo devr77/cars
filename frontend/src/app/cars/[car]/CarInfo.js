@@ -40,7 +40,7 @@ const data = [
 
 function CarInfo({ car }) {
   const [activeTab, setActiveTab] = React.useState("info");
-  console.log(car?.brand[0]?.name);
+
   return (
     <div className="mx-auto p-4 md:w-10/12">
       <Tabs value={activeTab} className=" mt-4">
@@ -190,56 +190,13 @@ function CarInfo({ car }) {
                       </span>
                     </div>
                     <p class="leading-relaxed">{car?.description}</p>
-                    <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
-                      <div class="flex">
-                        <span class="mr-3">Color</span>
-                        <button class="border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none"></button>
-                        <button class="border-2 border-gray-300 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"></button>
-                        <button class="border-2 border-gray-300 ml-1 bg-indigo-500 rounded-full w-6 h-6 focus:outline-none"></button>
-                      </div>
-                      <div class="flex ml-6 items-center">
-                        <span class="mr-3">Size</span>
-                        <div class="relative">
-                          <select class="rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base pl-3 pr-10">
-                            <option>SM</option>
-                            <option>M</option>
-                            <option>L</option>
-                            <option>XL</option>
-                          </select>
-                          <span class="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center">
-                            <svg
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              class="w-4 h-4"
-                              viewBox="0 0 24 24"
-                            >
-                              <path d="M6 9l6 6 6-6"></path>
-                            </svg>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
+
                     <div class="flex">
                       <span class="title-font font-medium text-2xl text-gray-900">
                         Rs. {car?.price}
                       </span>
                       <button class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
-                        Button
-                      </button>
-                      <button class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
-                        <svg
-                          fill="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          class="w-5 h-5"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
-                        </svg>
+                        Book Now
                       </button>
                     </div>
                   </div>
@@ -437,105 +394,23 @@ function CarInfo({ car }) {
             </section>
           </TabPanel>
           <TabPanel value="images">
-            <section class="text-gray-600 body-font">
-              <div class="container px-5 py-24 mx-auto flex flex-wrap">
-                <div class="lg:w-2/3 mx-auto">
-                  <div class="flex flex-wrap w-full bg-gray-100 py-32 px-10 relative mb-4">
-                    <img
-                      alt="gallery"
-                      class="w-full object-cover h-full object-center block opacity-25 absolute inset-0"
-                      src="https://dummyimage.com/820x340"
-                    />
-                    <div class="text-center relative z-10 w-full">
-                      <h2 class="text-2xl text-gray-900 font-medium title-font mb-2">
-                        Shooting Stars
-                      </h2>
-                      <p class="leading-relaxed">
-                        Skateboard +1 mustache fixie paleo lumbersexual.
-                      </p>
-                      <a class="mt-3 text-indigo-500 inline-flex items-center">
-                        Learn More
-                        <svg
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          class="w-4 h-4 ml-2"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M5 12h14M12 5l7 7-7 7"></path>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="flex flex-wrap -mx-2">
-                    <div class="px-2 w-1/2">
-                      <div class="flex flex-wrap w-full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
-                        <img
-                          alt="gallery"
-                          class="w-full object-cover h-full object-center block opacity-25 absolute inset-0"
-                          src="https://dummyimage.com/542x460"
-                        />
-                        <div class="text-center relative z-10 w-full">
-                          <h2 class="text-xl text-gray-900 font-medium title-font mb-2">
-                            Shooting Stars
-                          </h2>
-                          <p class="leading-relaxed">
-                            Skateboard +1 mustache fixie paleo lumbersexual.
-                          </p>
-                          <a class="mt-3 text-indigo-500 inline-flex items-center">
-                            Learn More
-                            <svg
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              class="w-4 h-4 ml-2"
-                              viewBox="0 0 24 24"
-                            >
-                              <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="px-2 w-1/2">
-                      <div class="flex flex-wrap w-full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
-                        <img
-                          alt="gallery"
-                          class="w-full object-cover h-full object-center block opacity-25 absolute inset-0"
-                          src="https://dummyimage.com/542x420"
-                        />
-                        <div class="text-center relative z-10 w-full">
-                          <h2 class="text-xl text-gray-900 font-medium title-font mb-2">
-                            Shooting Stars
-                          </h2>
-                          <p class="leading-relaxed">
-                            Skateboard +1 mustache fixie paleo lumbersexual.
-                          </p>
-                          <a class="mt-3 text-indigo-500 inline-flex items-center">
-                            Learn More
-                            <svg
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              class="w-4 h-4 ml-2"
-                              viewBox="0 0 24 24"
-                            >
-                              <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
+            <div class="mx-auto w-full md:w-3/4 lg:w-3/4">
+              <img
+                alt="gallery"
+                class="w-full object-cover h-1/2 object-center inset-0"
+                src={imageUrl(car?.image[0]?.asset?._ref)}
+              />
+              <img
+                alt="gallery"
+                class="w-full object-cover h-1/2 object-center inset-0"
+                src={imageUrl(car?.image[1]?.asset?._ref)}
+              />
+              <img
+                alt="gallery"
+                class="w-full object-cover h-1/2 object-center inset-0"
+                src={imageUrl(car?.image[2]?.asset?._ref)}
+              />
+            </div>
           </TabPanel>
           <TabPanel value="mileage">
             <section class="text-gray-600 body-font">

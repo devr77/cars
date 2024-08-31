@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import {
   Tabs,
   TabsHeader,
@@ -10,9 +10,12 @@ import {
 } from "@material-tailwind/react";
 import { brands } from "@/utils/brands";
 import { cities } from "@/utils/cities";
+import { useRouter } from "next/navigation";
 
 function HomPage() {
-  const [activeTab, setActiveTab] = React.useState("new");
+  const router = useRouter();
+  const [activeTab, setActiveTab] = useState("new");
+  const [City, setCity] = useState("new delhi");
   const data = [
     {
       label: "NEW CARS",
@@ -23,6 +26,13 @@ function HomPage() {
       value: "used",
     },
   ];
+
+  function cityChange(e) {
+    if (e.target.value === "Select City") {
+      return;
+    }
+    setCity(e.target.value);
+  }
   return (
     <Tabs value={activeTab} className="max-w-[40rem] ">
       <TabsHeader
@@ -56,6 +66,7 @@ function HomPage() {
               <select
                 id="countries"
                 class="h-12 border border-gray-300 text-gray-900 text-base rounded-lg block w-full py-2.5 px-4 focus:outline-none"
+                onChange={(e) => cityChange(e)}
               >
                 <option selected> Select City</option>
                 {cities?.map((city) => {
@@ -68,7 +79,11 @@ function HomPage() {
               </select>
             </div>
             <div class="block w-full">
-              <Button size="lg" className="w-full bg-red-800">
+              <Button
+                size="lg"
+                className="w-full bg-red-800"
+                onClick={() => router.push(`/cars?city=${City}`)}
+              >
                 New CARS
               </Button>
             </div>

@@ -34,12 +34,14 @@ function AppBar() {
     <header className="bg-white">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <Image
-            src="/assets/logo.jpg"
-            alt="carStore-logo"
-            width="100"
-            height="100"
-          />
+          <a href="/">
+            <Image
+              src="/assets/logo.jpg"
+              alt="carStore-logo"
+              width="100"
+              height="100"
+            />
+          </a>
           <div className="hidden md:block">
             <nav aria-label="Global">
               <ul className="flex items-center gap-6 text-sm font-bold">

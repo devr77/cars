@@ -88,10 +88,7 @@ function Footer() {
                 <a className="text-gray-600 hover:text-gray-800">Recent Cars</a>
               </li>
               <li>
-                <a className="text-gray-600 hover:text-gray-800">Newsletters</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Blog</a>
+                <a className="text-gray-600 hover:text-gray-800">Gallery</a>
               </li>
             </nav>
           </div>
