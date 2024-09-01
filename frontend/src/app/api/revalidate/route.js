@@ -5,6 +5,7 @@ const secret = process.env.SANITY_WEBHOOK;
 export async function POST(request) {
   try {
     const text = await request.text();
+    console.log(text);
     revalidatePath("/");
     revalidatePath("/cars");
     revalidatePath(`/cars/${text?.slug}`);

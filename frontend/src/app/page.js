@@ -66,7 +66,7 @@ export default async function page() {
       },
       publishedAt}`);
 
-  console.log("Posts", Post);
+  console.log("Postss", Post[0].image);
 
   return (
     <>

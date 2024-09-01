@@ -380,21 +380,13 @@ function CarInfo({ car }) {
           </TabPanel>
           <TabPanel value="images">
             <div class="mx-auto w-full md:w-3/4 lg:w-3/4">
-              <img
-                alt="gallery"
-                class="w-full object-cover h-1/2 object-center inset-0"
-                src={imageUrl(car?.image[0]?.asset?._ref)}
-              />
-              <img
-                alt="gallery"
-                class="w-full object-cover h-1/2 object-center inset-0"
-                src={imageUrl(car?.image[1]?.asset?._ref)}
-              />
-              <img
-                alt="gallery"
-                class="w-full object-cover h-1/2 object-center inset-0"
-                src={imageUrl(car?.image[2]?.asset?._ref)}
-              />
+              {car?.image.map((label, value) => (
+                <img
+                  alt="gallery"
+                  class="w-full object-cover h-1/2 object-center inset-0"
+                  src={imageUrl(label?.asset?._ref).url()}
+                />
+              ))}
             </div>
           </TabPanel>
           <TabPanel value="features">
