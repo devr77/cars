@@ -7,12 +7,18 @@ import {
   Typography,
 } from "@material-tailwind/react";
 import { brands } from "@/utils/brands";
+import { useRouter } from "next/navigation";
 
 function CarCompanyCategory() {
+  const router = useRouter();
   return (
     <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
       {brands.map((label, index) => (
-        <Card key={index} className=" mt-10 w-30">
+        <Card
+          key={index}
+          className=" mt-10 w-30"
+          onClick={() => router.push(`/cars?brand=${label.slug}`)}
+        >
           <CardHeader color="blue-gray" className="h-35 object-contain">
             <img src={`/assets/${label?.slug}.jpg`} alt="card-image" />
           </CardHeader>

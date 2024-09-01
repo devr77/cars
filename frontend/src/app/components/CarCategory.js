@@ -15,6 +15,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { cities } from "@/utils/cities";
+import { useRouter } from "next/navigation";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -91,6 +92,7 @@ const data = [
 ];
 
 function CarCategory({ TotalCars }) {
+  const router = useRouter();
   const [activeTab, setActiveTab] = React.useState("city");
   return (
     <div>
@@ -117,11 +119,7 @@ function CarCategory({ TotalCars }) {
           <TabPanel value="price">
             <Slider {...settings}>
               {TotalCars?.map((car, index) => (
-                <Card
-                  key={index}
-                  className=" mt-10 w-20"
-                  onClick={() => alert(car?.slug)}
-                >
+                <Card key={index} className=" mt-10 w-20">
                   <CardHeader color="blue-gray" className=" h-30">
                     <img src={car?.image} alt="card-image" />
                   </CardHeader>
@@ -164,7 +162,10 @@ function CarCategory({ TotalCars }) {
           <TabPanel value="city">
             <Slider {...settings}>
               {cities?.map((city) => (
-                <Card className="mt-10 w-20">
+                <Card
+                  className="mt-10 w-20"
+                  onClick={() => router.push(`/cars?city=${city?.slug}`)}
+                >
                   <CardHeader className="relative h-40">
                     <Typography
                       variant="h2"

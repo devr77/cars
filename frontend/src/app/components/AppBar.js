@@ -51,84 +51,27 @@ function AppBar() {
           <div className="hidden md:block">
             <nav aria-label="Global">
               <ul className="flex items-center gap-6 text-sm font-bold">
-                <div id="bouton" class="relative group/bouton">
-                  <li className="flex">
-                    <a
-                      className="text-black-500 transition hover:text-red-600"
-                      href="#"
-                    >
-                      New Cars
-                    </a>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="w-6 h-6"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="m19.5 8.25-7.5 7.5-7.5-7.5"
-                      />
-                    </svg>
-                  </li>
-                  <div className="absolute w-full bg-white top-full bg-stone-50 origine-top opacity-0 hidden flex-col group-hover/bouton:flex group-hover/bouton:opacity-100 transition-all">
-                    <div
-                      className="absolute  z-10 mt-2 w-56 rounded-md border border-gray-100 bg-white shadow-lg"
-                      role="menu"
-                    >
-                      <div className="p-2">
-                        <a
-                          href="#"
-                          className="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
-                          role="menuitem"
-                        >
-                          View on Storefront
-                        </a>
-                      </div>
-
-                      <div className="p-2">
-                        <a
-                          href="#"
-                          className="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
-                          role="menuitem"
-                        >
-                          View on Storefront
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <li className="flex">
+                <li>
                   <a
                     className="text-black-500 transition hover:text-gray-500/75"
-                    href="#"
+                    href="/cars?type=true"
                   >
-                    Used Cars
+                    New Car
                   </a>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-6 h-6"
+                </li>
+                <li>
+                  <a
+                    className="text-black-500 transition hover:text-gray-500/75"
+                    href="/cars?type=false"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
-                    />
-                  </svg>
+                    Used Car
+                  </a>
                 </li>
 
                 <li>
                   <a
                     className="text-black-500 transition hover:text-gray-500/75"
-                    href="#"
+                    href="/car-loan"
                   >
                     Car Loan
                   </a>

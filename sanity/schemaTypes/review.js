@@ -23,8 +23,7 @@ export default defineType({
     defineField({
       name: 'car',
       title: 'Car Name',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'car'}}],
+      type: 'string',
     }),
     defineField({
       name: 'remark',

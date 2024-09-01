@@ -12,6 +12,8 @@ import {
 } from "@material-tailwind/react";
 import { cities } from "@/utils/cities";
 import { brands } from "@/utils/brands";
+import { client } from "@/utils/sanityClient";
+import { slugToOriginal } from "@/utils/slugOriginal";
 
 const data = [
   {
@@ -27,6 +29,43 @@ const data = [
 
 function CarLoan() {
   const [activeTab, setActiveTab] = useState("used");
+
+  const [City, setCity] = useState("");
+
+  const [formDataEnquiry, setFormDataEnquiry] = useState({
+    names: "",
+    mobileNo: "",
+    emailId: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormDataEnquiry((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
+
+  const newEnquiry = {
+    _type: "loan",
+    name: `${formDataEnquiry?.names} - ${new Date()} `,
+    mobileNo: formDataEnquiry?.mobileNo,
+    city: slugToOriginal(City),
+  };
+
+  const handleSubmit = (e) => {
+    console.log(newEnquiry);
+    client
+      .create(newEnquiry)
+      .then((response) => {
+        if (response?._createdAt) {
+          alert("Thank You . We Will Call You Back.");
+        }
+      })
+      .catch((error) => {
+        console.error("Failed to create new contact:", error.message);
+      });
+  };
   return (
     <div className="mx-auto p-4 md:w-10/12">
       <h1>Looking For Car Loan</h1>
@@ -69,7 +108,7 @@ function CarLoan() {
                 <select
                   id="countries"
                   class="h-12 border border-gray-300 text-gray-900 text-base rounded-lg block w-full py-2.5 px-4 focus:outline-none"
-                  // onChange={(e) => cityChange(e)}
+                  onChange={(e) => setCity(e.target.value)}
                 >
                   <option selected> Select City</option>
                   {cities?.map((city) => {
@@ -82,10 +121,28 @@ function CarLoan() {
                 </select>
 
                 <h2>Full Name*</h2>
-                <Input label="Full name as per PAN CARD" className="mt-1" />
+                <Input
+                  label="Full name as per PAN CARD"
+                  className="mt-1"
+                  id="name"
+                  name="names"
+                  value={formDataEnquiry.names}
+                  onChange={handleChange}
+                />
                 <h2>Enter Mobile No*</h2>
-                <Input label="Enter Mobile No +91" className="mt-1" />
-                <Button className="bg-red-900 mt-4" size="md">
+                <Input
+                  label="Enter Mobile No +91"
+                  className="mt-1"
+                  id="mobileNo"
+                  name="mobileNo"
+                  value={formDataEnquiry.mobileNo}
+                  onChange={handleChange}
+                />
+                <Button
+                  className="bg-red-900 mt-4"
+                  size="md"
+                  onClick={handleSubmit}
+                >
                   Get Loan Starting @11.99%* Rate
                 </Button>
               </div>
