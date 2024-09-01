@@ -66,7 +66,7 @@ export default async function page() {
       },
       publishedAt}`);
 
-  // console.log("Post", Post);
+  console.log("Posts", Post);
 
   return (
     <>

@@ -1,5 +1,10 @@
 export const brands = [
   {
+    label: "Maruti Suzuki",
+    slug: "suzuki",
+    image: "",
+  },
+  {
     label: "Tata",
     slug: "tata",
     image: "",

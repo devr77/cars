@@ -5,6 +5,7 @@ import React from "react";
 function Cars({ TotalCars }) {
   return (
     <div className="mx-auto p-4 md:w-10/12 border-2 border-gray-200 ">
+      {TotalCars.length === 0 && <h1>Coming Soon To Your City..........</h1>}
       {TotalCars?.map((car) => {
         return (
           <a href={`/cars/${car?.slug.current}`}>
