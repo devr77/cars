@@ -66,11 +66,18 @@ export default async function page() {
       },
       publishedAt}`);
 
-  console.log("Postss", Post[0].image);
+  const Poster = await client.fetch(`*[_type == "gallery"]`);
 
   return (
     <>
-      <div className="relative h-[500px] bg-cover bg-center bg-[url('https://imgd.aeplcdn.com/0x0/ct/static/icons/cloudfront/top-banner2.jpg')]">
+      <div
+        className="relative h-[500px] bg-cover bg-center"
+        style={{
+          backgroundImage: `url(${imageUrl(
+            Poster[0]?.poster?.asset?._ref
+          ).url()})`,
+        }}
+      >
         <div className="absolute w-full md:w-3/4 lg:w-1/2 mx-auto bottom-2  p-2  left-1/2 transform -translate-x-1/2 ">
           <HomPage />
         </div>

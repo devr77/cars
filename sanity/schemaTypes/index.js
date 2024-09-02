@@ -8,6 +8,7 @@ import transmission from './transmission'
 import review from './review'
 import enquiry from './enquiry'
 import loan from './loan'
+import gallery from './gallery'
 
 export const schemaTypes = [
   car,
@@ -19,5 +20,6 @@ export const schemaTypes = [
   review,
   enquiry,
   loan,
+  gallery,
   contactus,
 ]

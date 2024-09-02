@@ -46,7 +46,6 @@ async function CarsFetch(param) {
 `);
 }
 
-// http://localhost:3000/cars?city=New-Delhi&brand=Tata
 async function page({ params, searchParams }) {
   const { brand, type, price, city, fuel, body } = searchParams;
 
@@ -69,7 +68,7 @@ async function page({ params, searchParams }) {
 
   console.log("Filters", filterConditions);
   const TotalCars = await CarsFetch(filterConditions);
-  console.log(TotalCars);
+
   return (
     <>
       <Cars TotalCars={TotalCars} />

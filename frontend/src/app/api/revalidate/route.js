@@ -5,11 +5,10 @@ const secret = process.env.SANITY_WEBHOOK;
 export async function POST(request) {
   try {
     const text = await request.text();
-    console.log(text);
+    const texts = JSON.parse(text);
     revalidatePath("/");
     revalidatePath("/cars");
-    revalidatePath(`/cars/${text?.slug}`);
-    console.log(text);
+    revalidatePath(`/cars/${texts?.slug}`);
   } catch (error) {
     return new Response(`Webhook error: ${error.message}`, {
       status: 400,

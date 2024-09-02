@@ -90,7 +90,6 @@ export default defineType({
       name: 'type',
       type: 'boolean',
     }),
-
     defineField({
       name: 'description',
       title: 'Description',
@@ -153,6 +152,12 @@ export default defineType({
       title: 'Select If Other Variants',
       type: 'array',
       of: [{type: 'reference', to: {type: 'car'}}],
+    }),
+
+    defineField({
+      title: 'Do Yo want to Publish Car ?',
+      name: 'published',
+      type: 'boolean',
     }),
 
     defineField({

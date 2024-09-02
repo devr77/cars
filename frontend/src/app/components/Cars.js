@@ -12,7 +12,7 @@ function Cars({ TotalCars }) {
             <div class="flex flex-col md:flex-row border-2 border-gray-300 mb-1">
               <div class="flex-1 p-4 h-[250px]">
                 <img
-                  src={imageUrl(car?.image[0]?.asset?._ref)}
+                  src={imageUrl(car?.image[0]?.asset?._ref).url()}
                   alt="Centered Image"
                   class="max-h-full w-3/4"
                 />
