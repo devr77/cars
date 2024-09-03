@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.carsstore7x24.in/
+
+# Sitemaps
+Sitemap: https://www.carsstore7x24.in/sitemap0.xml
+Sitemap: https://www.carsstore7x24.in/sitemap.xml
+Sitemap: https://www.carsstore7x24.in/cars/sitemap.xml
