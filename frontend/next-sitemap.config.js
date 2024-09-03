@@ -5,7 +5,6 @@ module.exports = {
   priority: 0.7,
   sitemapSize: 5000,
   generateRobotsTxt: true,
-  sitemapBaseFileName: "sitemap0",
   exclude: ["/api/*"],
   robotsTxtOptions: {
     policies: [

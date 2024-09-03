@@ -77,3 +77,22 @@ async function page({ params, searchParams }) {
 }
 
 export default page;
+
+export async function generateMetadata() {
+  return {
+    title: "Buy New Cars and Used Cars | CarsStore24x7",
+    description:
+      "Find great deals on used and new cars. Explore car loan options to make your purchase easy and affordable",
+    keywords: ["Car", "New Car", "Used Car", "Car Loan"],
+    publisher: "CarsStore24x7",
+    metadataBase: new URL("https://www.carsstore7x24.in/"),
+    alternates: {
+      canonical: "/cars",
+    },
+    robots: {
+      index: true,
+      follow: true,
+      cache: true,
+    },
+  };
+}

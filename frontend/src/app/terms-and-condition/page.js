@@ -1,4 +1,7 @@
-import React from "react";
+export const metadata = {
+  title: "Terms And Condition | CarsStore7x24",
+  description: "Terms And Condition CarsStore7x24",
+};
 
 function page() {
   return (

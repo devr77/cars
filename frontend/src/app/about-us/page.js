@@ -1,4 +1,7 @@
-import React from "react";
+export const metadata = {
+  title: "About Us | CarsStore7x24",
+  description: "About Our Company CarsStore7x24",
+};
 
 function page() {
   return (
