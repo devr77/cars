@@ -8,6 +8,7 @@ import NewCars from "./components/NewCars";
 import TestiMonial from "./components/TestiMonial";
 import { client } from "@/utils/sanityClient";
 import { imageUrl } from "@/utils/imageUrl";
+import Script from "next/script";
 
 async function Cars() {
   try {
@@ -20,6 +21,13 @@ async function Cars() {
     console.log(err);
   }
 }
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "carStore7x24",
+  url: "https://www.carsstore7x24.in/",
+};
 
 export default async function page() {
   const TotalCars = await Cars();
@@ -70,6 +78,10 @@ export default async function page() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div
         className="relative h-[500px] bg-cover bg-center"
         style={{
@@ -142,11 +154,11 @@ export default async function page() {
 
 export async function generateMetadata() {
   return {
-    title: "Buy New Cars and Used Cars | CarsStore24x7",
+    title: "Buy New Cars and Used Cars | CarsStore7x24",
     description:
       "Find great deals on used and new cars. Explore car loan options to make your purchase easy and affordable",
     keywords: ["Car", "New Car", "Used Car", "Car Loan"],
-    publisher: "CarsStore24x7",
+    publisher: "CarsStore7x24",
     metadataBase: new URL("https://www.carsstore7x24.in/"),
     alternates: {
       canonical: "/",

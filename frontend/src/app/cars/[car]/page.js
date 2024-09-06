@@ -1,5 +1,6 @@
 import { client } from "@/utils/sanityClient";
 import CarInfo from "./CarInfo";
+import { slugToOriginal } from "@/utils/slugOriginal";
 
 async function carDetails(param) {
   return client.fetch(`*[_type == "car" && slug.current == '${param}'][0]{
@@ -58,10 +59,10 @@ export default page;
 
 export async function generateMetadata({ params }) {
   return {
-    title: `Buy New Cars and Used Cars ${params?.car} | CarsStore24x7`,
+    title: ` ${slugToOriginal(params?.car)} | CarsStore7x24`,
     description: `Find great deals on used and new cars. ${params?.car} Explore car loan options to make your purchase easy and affordable`,
     keywords: ["Car", "New Car", "Used Car", "Car Loan"],
-    publisher: "CarsStore24x7",
+    publisher: "CarsStore7x24",
     metadataBase: new URL("https://www.carsstore7x24.in/"),
     alternates: {
       canonical: `/cars/${params?.car}`,
