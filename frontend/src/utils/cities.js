@@ -5,6 +5,31 @@ export const cities = [
     image: "",
   },
   {
+    label: "Noida",
+    slug: "noida",
+    image: "",
+  },
+  {
+    label: "Gurugram",
+    slug: "gurugram",
+    image: "",
+  },
+  {
+    label: "Sonipat",
+    slug: "sonipat",
+    image: "",
+  },
+  {
+    label: "Ghaziabad",
+    slug: "ghaziabad",
+    image: "",
+  },
+  {
+    label: "Agra",
+    slug: "agra",
+    image: "",
+  },
+  {
     label: "Indore",
     slug: "indore",
     image: "",
