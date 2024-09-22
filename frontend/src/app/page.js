@@ -8,19 +8,6 @@ import NewCars from "./components/NewCars";
 import TestiMonial from "./components/TestiMonial";
 import { client } from "@/utils/sanityClient";
 import { imageUrl } from "@/utils/imageUrl";
-import Script from "next/script";
-
-async function Cars() {
-  try {
-    const res = await fetch("https://freetestapi.com/api/v1/cars?limit=5");
-    if (!res.ok) {
-      throw new Error("Error occurred when fetching posts");
-    }
-    return res.json();
-  } catch (err) {
-    console.log(err);
-  }
-}
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -30,8 +17,6 @@ const jsonLd = {
 };
 
 export default async function page() {
-  const TotalCars = await Cars();
-
   const Post = await client.fetch(`*[_type == "car"]{
       name,
       slug,
@@ -120,7 +105,7 @@ export default async function page() {
             </div>
           </div>
 
-          <CarCategory TotalCars={TotalCars} />
+          <CarCategory TotalCars={Post} />
         </div>
       </div>
 
