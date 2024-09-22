@@ -16,6 +16,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { imageUrl } from "@/utils/imageUrl";
 import { useRouter } from "next/navigation";
+import { imageUrls } from "../utility/imageUrls";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -128,7 +129,7 @@ export function CarsTabs({ TotalCars }) {
                   <CardHeader color="blue-gray" className=" h-30">
                     <img
                       // src="https://picsum.photos/200/300"
-                      src={imageUrl(car?.image[0]?.asset?._ref)}
+                      src={imageUrls(car?.image[0]?.asset?._ref)}
                       alt="card-image"
                     />
                   </CardHeader>
