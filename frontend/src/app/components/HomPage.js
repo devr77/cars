@@ -41,7 +41,7 @@ function HomPage() {
           className: "bg-gray-50  ",
         }}
       >
-        {data.map(({ label, value }) => (
+        {data?.map(({ label, value }) => (
           <Tab
             key={value}
             value={value}

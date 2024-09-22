@@ -76,7 +76,7 @@ export default async function page() {
         }}
       >
         <div className="absolute w-full md:w-3/4 lg:w-1/2 mx-auto bottom-2  p-2  left-1/2 transform -translate-x-1/2 ">
-          {/* <HomPage /> */}
+          <HomPage />
         </div>
       </div>
 
