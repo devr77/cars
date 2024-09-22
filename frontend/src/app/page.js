@@ -76,11 +76,11 @@ export default async function page() {
         }}
       >
         <div className="absolute w-full md:w-3/4 lg:w-1/2 mx-auto bottom-2  p-2  left-1/2 transform -translate-x-1/2 ">
-          <HomPage />
+          {/* <HomPage /> */}
         </div>
       </div>
 
-      <div className="h-4/5 mt-36 bg-gray-200">
+      {/* <div className="h-4/5 mt-36 bg-gray-200">
         <div className=" mx-auto p-4   md:w-10/12">
           <div className="flex justify-between mb-5">
             <h2 className="font-bold text-red-700 text-base sm:text-lg md:text-xl lg:text-2xl">
@@ -130,7 +130,7 @@ export default async function page() {
           </h2>
           <NewCars />
         </div>
-      </div>
+      </div> */}
 
       <TestiMonial />
     </>
