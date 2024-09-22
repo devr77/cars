@@ -94,7 +94,7 @@ const data = [
 export function CarsTabs({ TotalCars }) {
   const router = useRouter();
   const [activeTab, setActiveTab] = React.useState("popular");
-
+  console.log(imageUrl(TotalCars[0]?.image[0]?.asset?._ref)?.url());
   return (
     <>
       <Tabs value={activeTab}>
