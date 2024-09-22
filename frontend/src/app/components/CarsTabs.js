@@ -94,8 +94,7 @@ const data = [
 export function CarsTabs({ TotalCars }) {
   const router = useRouter();
   const [activeTab, setActiveTab] = React.useState("popular");
-  console.log("C", imageUrl(TotalCars[0]?.image[0]?.asset?._ref).url());
-  console.log(TotalCars[0].image[0]);
+
   return (
     <>
       <Tabs value={activeTab}>
@@ -128,7 +127,6 @@ export function CarsTabs({ TotalCars }) {
                 >
                   <CardHeader color="blue-gray" className=" h-30">
                     <img
-                      // src="https://picsum.photos/200/300"
                       src={
                         car?.image?.length > 0
                           ? imageUrl(car.image[0]?.asset?._ref).url()
@@ -154,8 +152,11 @@ export function CarsTabs({ TotalCars }) {
                 <Card key={index} className=" mt-10 w-20">
                   <CardHeader color="blue-gray" className=" h-30">
                     <img
-                      // src={imageUrl(car?.image[0]?.asset?._ref)?.url()}
-                      src="https://picsum.photos/200/300"
+                      src={
+                        car?.image?.length > 0
+                          ? imageUrl(car.image[0]?.asset?._ref).url()
+                          : "/logo.jpg"
+                      }
                       alt="card-image"
                     />
                   </CardHeader>
@@ -176,8 +177,11 @@ export function CarsTabs({ TotalCars }) {
                 <Card key={index} className=" mt-10 w-20">
                   <CardHeader color="blue-gray" className=" h-30">
                     <img
-                      // src={imageUrl(car?.image[0]?.asset?._ref)?.url()}
-                      src="https://picsum.photos/200/300"
+                      src={
+                        car?.image?.length > 0
+                          ? imageUrl(car.image[0]?.asset?._ref).url()
+                          : "/logo.jpg"
+                      }
                       alt="card-image"
                     />
                   </CardHeader>
