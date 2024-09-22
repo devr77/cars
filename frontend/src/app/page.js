@@ -94,7 +94,7 @@ export default async function page() {
           <CarsTabs TotalCars={Post} />
         </div>
       </div>
-      {/* <div className="mt-36 ">
+      <div className="mt-36 ">
         <div className=" mx-auto   p-4 md:w-10/12">
           <div className="flex justify-between mb-5">
             <h2 className="font-bold text-red-500 text-base sm:text-lg md:text-xl lg:text-2xl">
@@ -130,7 +130,7 @@ export default async function page() {
           </h2>
           <NewCars />
         </div>
-      </div> */}
+      </div>
 
       <TestiMonial />
     </>

@@ -126,12 +126,12 @@ export function CarsTabs({ TotalCars }) {
                   className=" mt-10 w-20"
                   onClick={() => router.push(`/cars/${car?.slug?.current}`)}
                 >
-                  {/* <CardHeader color="blue-gray" className=" h-30">
+                  <CardHeader color="blue-gray" className=" h-30">
                     <img
                       src={imageUrl(car?.image[0]?.asset?._ref)?.url()}
                       alt="card-image"
                     />
-                  </CardHeader> */}
+                  </CardHeader>
                   <CardBody>
                     <Typography variant="h5" color="blue-gray" className="mb-2">
                       {car?.name}
@@ -147,12 +147,12 @@ export function CarsTabs({ TotalCars }) {
             <Slider {...settings}>
               {TotalCars?.map((car, index) => (
                 <Card key={index} className=" mt-10 w-20">
-                  {/* <CardHeader color="blue-gray" className=" h-30">
+                  <CardHeader color="blue-gray" className=" h-30">
                     <img
                       src={imageUrl(car?.image[0]?.asset?._ref)?.url()}
                       alt="card-image"
                     />
-                  </CardHeader> */}
+                  </CardHeader>
                   <CardBody>
                     <Typography variant="h5" color="blue-gray" className="mb-2">
                       {car?.name}
@@ -168,12 +168,12 @@ export function CarsTabs({ TotalCars }) {
             <Slider {...settings}>
               {TotalCars?.map((car, index) => (
                 <Card key={index} className=" mt-10 w-20">
-                  {/* <CardHeader color="blue-gray" className=" h-30">
+                  <CardHeader color="blue-gray" className=" h-30">
                     <img
                       src={imageUrl(car?.image[0]?.asset?._ref)?.url()}
                       alt="card-image"
                     />
-                  </CardHeader> */}
+                  </CardHeader>
                   <CardBody>
                     <Typography variant="h5" color="blue-gray" className="mb-2">
                       {car?.name}
