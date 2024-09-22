@@ -92,7 +92,6 @@ const data = [
 ];
 
 export function CarsTabs({ TotalCars }) {
-  console.log(TotalCars);
   const router = useRouter();
   const [activeTab, setActiveTab] = React.useState("popular");
 
@@ -128,7 +127,8 @@ export function CarsTabs({ TotalCars }) {
                 >
                   <CardHeader color="blue-gray" className=" h-30">
                     <img
-                      src={imageUrl(car?.image[0]?.asset?._ref)?.url()}
+                      src="https://picsum.photos/200/300"
+                      // src={imageUrl(car?.image[0]?.asset?._ref)?.url()}
                       alt="card-image"
                     />
                   </CardHeader>
@@ -149,7 +149,8 @@ export function CarsTabs({ TotalCars }) {
                 <Card key={index} className=" mt-10 w-20">
                   <CardHeader color="blue-gray" className=" h-30">
                     <img
-                      src={imageUrl(car?.image[0]?.asset?._ref)?.url()}
+                      // src={imageUrl(car?.image[0]?.asset?._ref)?.url()}
+                      src="https://picsum.photos/200/300"
                       alt="card-image"
                     />
                   </CardHeader>
@@ -170,7 +171,8 @@ export function CarsTabs({ TotalCars }) {
                 <Card key={index} className=" mt-10 w-20">
                   <CardHeader color="blue-gray" className=" h-30">
                     <img
-                      src={imageUrl(car?.image[0]?.asset?._ref)?.url()}
+                      // src={imageUrl(car?.image[0]?.asset?._ref)?.url()}
+                      src="https://picsum.photos/200/300"
                       alt="card-image"
                     />
                   </CardHeader>
