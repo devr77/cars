@@ -105,7 +105,7 @@ export function CarsTabs({ TotalCars }) {
               "bg-transparent border-b-2 border-red-900 shadow-none rounded-none",
           }}
         >
-          {data.map(({ label, value }) => (
+          {data?.map(({ label, value }) => (
             <Tab
               key={value}
               value={value}
