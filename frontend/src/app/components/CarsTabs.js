@@ -94,7 +94,8 @@ const data = [
 export function CarsTabs({ TotalCars }) {
   const router = useRouter();
   const [activeTab, setActiveTab] = React.useState("popular");
-  console.log(imageUrl(TotalCars[2]?.image[0]?.asset?._ref).url());
+  console.log("C", imageUrl(TotalCars[0]?.image[0]?.asset?._ref).url());
+  console.log(TotalCars[0].image[0]);
   return (
     <>
       <Tabs value={activeTab}>
@@ -128,7 +129,11 @@ export function CarsTabs({ TotalCars }) {
                   <CardHeader color="blue-gray" className=" h-30">
                     <img
                       // src="https://picsum.photos/200/300"
-                      src={imageUrl(car.image[0].asset._ref).url()}
+                      src={
+                        car?.image?.length > 0
+                          ? imageUrl(car.image[0]?.asset?._ref).url()
+                          : "/logo.jpg"
+                      }
                       alt="card-image"
                     />
                   </CardHeader>
