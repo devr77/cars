@@ -128,7 +128,7 @@ export function CarsTabs({ TotalCars }) {
                   <CardHeader color="blue-gray" className=" h-30">
                     <img
                       // src="https://picsum.photos/200/300"
-                      src={imageUrl(car?.image[0]?.asset?._ref).url()}
+                      src={imageUrl(car.image[0].asset._ref).url()}
                       alt="card-image"
                     />
                   </CardHeader>
