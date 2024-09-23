@@ -16,6 +16,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { imageUrl } from "@/utils/imageUrl";
 import { useRouter } from "next/navigation";
+import { trim } from "@/utils/trim";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -95,7 +96,7 @@ export function CarsTabs({ TotalCars }) {
   const router = useRouter();
   const [activeTab, setActiveTab] = React.useState("popular");
 
-  console.log(imageUrl(TotalCars[0]?.image[0]?.asset?._ref)?.url());
+  // console.log(imageUrl(TotalCars[0]?.image[0]?.asset?._ref)?.url());
 
   return (
     <>
@@ -129,13 +130,10 @@ export function CarsTabs({ TotalCars }) {
                 >
                   <CardHeader color="blue-gray" className=" h-30">
                     <img
-                      // src={
-                      //   car?.image?.length > 0
-                      //     ? imageUrl(car?.image[0]?.asset?._ref)?.url()
-                      //     : "/logo.jpg"
-                      // }
-
-                      src="https://picsum.photos/200/300"
+                      src={
+                        process.env.NEXT_PUBLIC_SANITY_URL +
+                        trim(car?.image[0]?.asset?._ref)
+                      }
                       alt="card-image"
                     />
                   </CardHeader>
@@ -156,12 +154,10 @@ export function CarsTabs({ TotalCars }) {
                 <Card key={index} className=" mt-10 w-20">
                   <CardHeader color="blue-gray" className=" h-30">
                     <img
-                      // src={
-                      //   car?.image?.length > 0
-                      //     ? imageUrl(car?.image[0]?.asset?._ref)?.url()
-                      //     : "/logo.jpg"
-                      // }
-                      src="https://picsum.photos/200/300"
+                      src={
+                        process.env.NEXT_PUBLIC_SANITY_URL +
+                        trim(car?.image[0]?.asset?._ref)
+                      }
                       alt="card-image"
                     />
                   </CardHeader>
@@ -182,12 +178,10 @@ export function CarsTabs({ TotalCars }) {
                 <Card key={index} className=" mt-10 w-20">
                   <CardHeader color="blue-gray" className=" h-30">
                     <img
-                      src="https://picsum.photos/200/300"
-                      // src={
-                      //   car?.image?.length > 0
-                      //     ? imageUrl(car?.image[0]?.asset?._ref)?.url()
-                      //     : "/logo.jpg"
-                      // }
+                      src={
+                        process.env.NEXT_PUBLIC_SANITY_URL +
+                        trim(car?.image[0]?.asset?._ref)
+                      }
                       alt="card-image"
                     />
                   </CardHeader>

@@ -41,7 +41,7 @@ export default async function page() {
       name
       },
       feature,
-      image,
+      image ,
       description,
       price,
       mileage,
