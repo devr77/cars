@@ -129,7 +129,7 @@ export function CarsTabs({ TotalCars }) {
                     <img
                       src={
                         car?.image?.length > 0
-                          ? imageUrl(car.image[0]?.asset?._ref).url()
+                          ? imageUrl(car?.image[0]?.asset?._ref).url()
                           : "/logo.jpg"
                       }
                       alt="card-image"
@@ -154,7 +154,7 @@ export function CarsTabs({ TotalCars }) {
                     <img
                       src={
                         car?.image?.length > 0
-                          ? imageUrl(car.image[0]?.asset?._ref).url()
+                          ? imageUrl(car?.image[0]?.asset?._ref).url()
                           : "/logo.jpg"
                       }
                       alt="card-image"
@@ -179,7 +179,7 @@ export function CarsTabs({ TotalCars }) {
                     <img
                       src={
                         car?.image?.length > 0
-                          ? imageUrl(car.image[0]?.asset?._ref).url()
+                          ? imageUrl(car?.image[0]?.asset?._ref).url()
                           : "/logo.jpg"
                       }
                       alt="card-image"
