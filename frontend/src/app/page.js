@@ -91,7 +91,7 @@ export default async function page() {
             </div>
           </div>
 
-          <CarsTabs TotalCars={Post} />
+          {/* <CarsTabs TotalCars={Post} /> */}
         </div>
       </div>
       <div className="mt-36 ">
