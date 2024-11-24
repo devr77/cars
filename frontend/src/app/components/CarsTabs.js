@@ -96,14 +96,14 @@ export function CarsTabs({ TotalCars }) {
   const router = useRouter();
   const [activeTab, setActiveTab] = React.useState("popular");
 
-  console.log("ImageUrl", imageUrl(TotalCars[0]?.image[0]?.asset?._ref)?.url());
+  // console.log("ImageUrl", imageUrl(TotalCars[0]?.image[0]?.asset?._ref)?.url());
   // console.log(
   //   "Custom",
   //   process.env.NEXT_PUBLIC_SANITY_URL +
   //     trim(TotalCars[0]?.image[0]?.asset?._ref)
   // );
-  console.log(TotalCars);
-  console.log("TotalCars", TotalCars[0]?.image[0]?.asset?._ref);
+  // console.log(TotalCars[0].image);
+  // // console.log("TotalCars", TotalCars[0]?.image[0]?.asset?._ref);
 
   return (
     <>
@@ -139,9 +139,10 @@ export function CarsTabs({ TotalCars }) {
                     <img
                       src={
                         process.env.NEXT_PUBLIC_SANITY_URL +
-                        trim(car?.image[0]?.asset?._ref)
+                        (Array.isArray(car?.image) && car.image[0]?.asset?._ref
+                          ? trim(car.image[0]?.asset?._ref)
+                          : "")
                       }
-                      // src={imageUrl(car?.image[0]?.asset?._ref)?.url()}
                       alt="card-image"
                     />
                   </CardHeader>
