@@ -16,6 +16,8 @@ const jsonLd = {
   url: "https://www.carsstore7x24.in/",
 };
 
+export const dynamic = "force-dynamic";
+
 export default async function page() {
   const Post = await client.fetch(`*[_type == "car"]{
       name,
