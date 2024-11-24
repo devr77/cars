@@ -1,7 +1,7 @@
 export const brands = [
   {
     label: "Maruti Suzuki",
-    slug: "suzuki",
+    slug: "maruti-suzuki",
     image: "",
   },
   {

@@ -8,7 +8,7 @@ function Cars({ TotalCars }) {
       {TotalCars.length === 0 && <h1>Coming Soon To Your City..........</h1>}
       {TotalCars?.map((car) => {
         return (
-          <a href={`/cars/${car?.slug.current}`}>
+          <a href={`/cars/${car?.slug.current}`} key={car?.slug.current}>
             <div class="flex flex-col md:flex-row border-2 border-gray-300 mb-1">
               <div class="flex-1 p-4 h-[250px]">
                 <img
@@ -19,7 +19,7 @@ function Cars({ TotalCars }) {
               </div>
               <div class="flex-1 p-4 h-[250px] text-center">
                 <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">
-                  {car?.brand[0]?.name} {car?.name}
+                  {car?.name}
                 </h1>
                 <h1 class=" text-xl title-font font-medium mb-1">
                   Rs. {car?.price}
