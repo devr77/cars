@@ -128,7 +128,7 @@ export function CarsTabs({ TotalCars }) {
                   className=" mt-10 w-20"
                   onClick={() => router.push(`/cars/${car?.slug?.current}`)}
                 >
-                  <CardHeader color="blue-gray" className=" h-30">
+                  {/* <CardHeader color="blue-gray" className=" h-30">
                     <img
                       src={
                         process.env.NEXT_PUBLIC_SANITY_URL +
@@ -136,7 +136,7 @@ export function CarsTabs({ TotalCars }) {
                       }
                       alt="card-image"
                     />
-                  </CardHeader>
+                  </CardHeader> */}
                   <CardBody>
                     <Typography variant="h5" color="blue-gray" className="mb-2">
                       {car?.name}
@@ -152,7 +152,7 @@ export function CarsTabs({ TotalCars }) {
             <Slider {...settings}>
               {TotalCars?.map((car, index) => (
                 <Card key={index} className=" mt-10 w-20">
-                  <CardHeader color="blue-gray" className=" h-30">
+                  {/* <CardHeader color="blue-gray" className=" h-30">
                     <img
                       src={
                         process.env.NEXT_PUBLIC_SANITY_URL +
@@ -160,7 +160,7 @@ export function CarsTabs({ TotalCars }) {
                       }
                       alt="card-image"
                     />
-                  </CardHeader>
+                  </CardHeader> */}
                   <CardBody>
                     <Typography variant="h5" color="blue-gray" className="mb-2">
                       {car?.name}
@@ -176,7 +176,7 @@ export function CarsTabs({ TotalCars }) {
             <Slider {...settings}>
               {TotalCars?.map((car, index) => (
                 <Card key={index} className=" mt-10 w-20">
-                  <CardHeader color="blue-gray" className=" h-30">
+                  {/* <CardHeader color="blue-gray" className=" h-30">
                     <img
                       src={
                         process.env.NEXT_PUBLIC_SANITY_URL +
@@ -184,7 +184,7 @@ export function CarsTabs({ TotalCars }) {
                       }
                       alt="card-image"
                     />
-                  </CardHeader>
+                  </CardHeader> */}
                   <CardBody>
                     <Typography variant="h5" color="blue-gray" className="mb-2">
                       {car?.name}
