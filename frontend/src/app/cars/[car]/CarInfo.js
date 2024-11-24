@@ -169,7 +169,7 @@ function CarInfo({ car }) {
                       {car?.brand[0]?.name}
                     </h2>
                     <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">
-                      {car?.brand[0]?.name} {car?.name}
+                      {car?.name}
                     </h1>
                     <div class="flex mb-4">
                       <span class="flex items-center">
