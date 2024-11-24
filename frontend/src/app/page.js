@@ -91,7 +91,7 @@ export default async function page() {
             </div>
           </div>
 
-          <CarsTabs TotalCars={Post} />
+          {/* <CarsTabs TotalCars={Post} /> */}
         </div>
       </div>
       <div className="mt-36 ">
@@ -119,7 +119,7 @@ export default async function page() {
               VIEW ALL &rarr;
             </div>
           </div>
-          <CarCompanyCategory />
+          {/* <CarCompanyCategory /> */}
         </div>
       </div>
 
@@ -128,7 +128,7 @@ export default async function page() {
           <h2 className="font-bold text-red-500 text-base sm:text-lg md:text-xl lg:text-2xl">
             FIND NEW CARS OF YOUR CHOICE
           </h2>
-          <NewCars />
+          {/* <NewCars /> */}
         </div>
       </div>
 
