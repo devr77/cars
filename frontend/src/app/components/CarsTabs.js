@@ -161,15 +161,17 @@ export function CarsTabs({ TotalCars }) {
             <Slider {...settings}>
               {TotalCars?.map((car, index) => (
                 <Card key={index} className=" mt-10 w-20">
-                  {/* <CardHeader color="blue-gray" className=" h-30">
+                  <CardHeader color="blue-gray" className=" h-30">
                     <img
                       src={
                         process.env.NEXT_PUBLIC_SANITY_URL +
-                        trim(car?.image[0]?.asset?._ref)
+                        (Array.isArray(car?.image) && car.image[0]?.asset?._ref
+                          ? trim(car.image[0]?.asset?._ref)
+                          : "")
                       }
                       alt="card-image"
                     />
-                  </CardHeader> */}
+                  </CardHeader>
                   <CardBody>
                     <Typography variant="h5" color="blue-gray" className="mb-2">
                       {car?.name}
@@ -185,15 +187,17 @@ export function CarsTabs({ TotalCars }) {
             <Slider {...settings}>
               {TotalCars?.map((car, index) => (
                 <Card key={index} className=" mt-10 w-20">
-                  {/* <CardHeader color="blue-gray" className=" h-30">
+                  <CardHeader color="blue-gray" className=" h-30">
                     <img
                       src={
                         process.env.NEXT_PUBLIC_SANITY_URL +
-                        trim(car?.image[0]?.asset?._ref)
+                        (Array.isArray(car?.image) && car.image[0]?.asset?._ref
+                          ? trim(car.image[0]?.asset?._ref)
+                          : "")
                       }
                       alt="card-image"
                     />
-                  </CardHeader> */}
+                  </CardHeader>
                   <CardBody>
                     <Typography variant="h5" color="blue-gray" className="mb-2">
                       {car?.name}

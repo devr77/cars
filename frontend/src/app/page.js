@@ -19,7 +19,7 @@ const jsonLd = {
 export const dynamic = "force-dynamic";
 
 export default async function page() {
-  const Post = await client.fetch(`*[_type == "car"]{
+  const Post = await client.fetch(`*[_type == "car"] [0..10] {
       name,
       slug,
       brand []  -> {
